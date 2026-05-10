@@ -1,1 +1,10 @@
-Hello.
+To run c programs do:
+cd c_code
+gcc filename.c -o filename
+.\ filename.exe
+
+To run rust do:
+cargo new project_name
+cargo run
+
+(cargo new projectname creates a new folder with src and everything)
