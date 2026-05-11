@@ -12,6 +12,12 @@ To run rust do:
 cargo new project_name
 cargo run
 ```
+to run main.rs.
+
+Otherwise do 
+```
+cargo run --bin filename
+```
 
 (cargo new projectname creates a new folder with src and everything)
 (Each rust file )
