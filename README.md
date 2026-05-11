@@ -22,5 +22,17 @@ Otherwise do
 cargo run --bin filename
 ```
 
+
+library in c to use in rust:
+
+```
+gcc -c filename.c -o filename.o
+ar rcs lib+filename.a filename.o
+rustc rustfile.rs -L . -l static=filename -o rustFile
+
+cargo run --bin rustfile
+
+```
+
 (cargo new projectname creates a new folder with src and everything)
 (Each rust file )
