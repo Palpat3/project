@@ -1,4 +1,5 @@
 To run c programs do:
+
 ```
     cd c_code
     gcc filename.c -o filename -flags
@@ -8,6 +9,7 @@ To run c programs do:
 `-fno-stack-protector -Wall`
 
 To run rust do:
+
 ```
     cargo new project_name
     cargo run
@@ -15,6 +17,7 @@ To run rust do:
 to run main.rs.
 
 Otherwise do 
+
 ```
     cargo run --bin filename
 ```
