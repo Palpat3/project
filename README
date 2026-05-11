@@ -1,22 +1,22 @@
 To run c programs do:
 ```
-cd c_code
-gcc filename.c -o filename -flags
-./filename.exe
+    cd c_code
+    gcc filename.c -o filename -flags
+    ./filename.exe
 ```
 
 `-fno-stack-protector -Wall`
 
 To run rust do:
 ```
-cargo new project_name
-cargo run
+    cargo new project_name
+    cargo run
 ```
 to run main.rs.
 
 Otherwise do 
 ```
-cargo run --bin filename
+    cargo run --bin filename
 ```
 
 (cargo new projectname creates a new folder with src and everything)
