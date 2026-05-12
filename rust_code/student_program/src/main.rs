@@ -28,7 +28,7 @@ fn main() {
     s2.print_info();
 
     println!("-- Long name student --");
-    let s3 = Student::new("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", 3, 2.5);
+    let s3 = Student::new("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", 3, 2.5); //34 characters long name
     s3.print_info();
 
     println!("-- integer overflow test --");
