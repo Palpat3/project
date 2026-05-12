@@ -17,5 +17,8 @@ void delete_student(Student* s) {
 
 void print_student(Student* s) {
     printf("Student: %s | ID: %d | Grade: %.1f\n", s->name, s->id, s->grade);
+    printf("  name address:  %p\n", (void*)s->name);
+    printf("  id address:    %p\n", (void*)&s->id);
+    printf("  grade address: %p\n", (void*)&s->grade);
 }
 

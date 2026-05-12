@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <limits.h>
+#include <string.h>
 #include "student.h"
 
 int main() {
@@ -11,7 +12,9 @@ int main() {
     print_student(s2);
 
     printf("Adding student with long name...\n");
-    Student* s3 = create_student("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 3, 5.0); //36 characters, exceeds NAME_LENGTH
+    Student* s3 = create_student("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", 3, 5.0); // 34 characters, exceeds NAME_LENGTH
+    //Too long name will cause integer overflow to crash, overflow corruption happens in heap metadata invisibly
+    //Id should be corrupted af 32 character but it is possible that windows heap allocator places heap metadata in between name and id
     print_student(s3);  // This will cause a buffer overflow
 
     printf("Student id wraparound test...\n");
