@@ -5,9 +5,13 @@
 
 Student* create_student(const char* name, int id, float grade) {
     Student* s = malloc(sizeof(Student));
-    strcpy(s->name, name);  // naive copy, no bounds checking
+    
     s->id = id;
     s->grade = grade;
+
+    strcpy(s->name, name);  // naive copy, no bounds checking
+    // strcpy should be after setting id and grade to show vulnerability, if set before then id and grade overwrites overflown name and "fixes it"
+
     return s;
 }
 

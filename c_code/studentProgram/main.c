@@ -3,6 +3,8 @@
 #include <string.h>
 #include "student.h"
 
+// AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 34 characters
+// AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 64 characters
 int main() {
     printf("=== Student Program ===\n\n");
     printf("Creating students...\n");
@@ -12,9 +14,10 @@ int main() {
     print_student(s2);
 
     printf("Adding student with long name...\n");
-    Student* s3 = create_student("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", 3, 5.0); // 34 characters, exceeds NAME_LENGTH
+    Student* s3 = create_student("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", 3, 5.0); // 34 characters, exceeds NAME_LENGTH
     //Too long name will cause integer overflow to crash, overflow corruption happens in heap metadata invisibly
     //Id should be corrupted af 32 character but it is possible that windows heap allocator places heap metadata in between name and id
+    //small overflow just overwrites id and grade but bigger overflow corrupts outside struct which can fuck up heap metadata and crash next coming instructions.
     print_student(s3);  // This will cause a buffer overflow
 
     printf("Student id wraparound test...\n");
